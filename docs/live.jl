@@ -13,6 +13,7 @@ function callback(x)
     # only trigger for source files to avoid infinite loop
     if x in SOURCES
         include(joinpath(@__DIR__, "make.jl"))
+        LiveServer.file_changed_callback(x)
     end
 end
 
